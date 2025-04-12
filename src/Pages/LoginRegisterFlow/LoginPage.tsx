@@ -1,3 +1,5 @@
+import {ParamListBase, useNavigation} from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import React, {useState} from 'react';
 import {
   Dimensions,
@@ -13,6 +15,7 @@ import {
 function LoginPage(): React.JSX.Element {
   const [enterEmail, setEnterEmail] = useState('');
   const [enterPassword, setEnterPassword] = useState('');
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
   return (
     <SafeAreaView style={styles.mainApp}>
       <Image
@@ -119,7 +122,7 @@ function LoginPage(): React.JSX.Element {
         testID="Register_Button_Text">
         Need to Register?{' '}
         <Text
-          onPress={() => {}}
+          onPress={() => navigation.navigate('RegisterPage')}
           style={styles.registerButtonUnderLineText}
           testID="Register_Button_Text_Press">
           Register Here
