@@ -1,11 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import PagesNavigator from './Frontend/PagesNavigation/PagesNavigator';
+import MainNavigator from './Frontend/PagesNavigation/MainNavigator';
 
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <PagesNavigator />
+      <MainNavigator />
     </NavigationContainer>
   );
 }

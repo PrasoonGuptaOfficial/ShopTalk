@@ -6,7 +6,7 @@ import {
 import LoginPage from '../Pages/LoginRegisterFlow/LoginPage';
 import RegisterPage from '../Pages/LoginRegisterFlow/RegisterPage';
 
-function PagesNavigator(): React.JSX.Element {
+function LoginRegisterNavigator(): React.JSX.Element {
   const Stack = createStackNavigator();
 
   return (
@@ -43,4 +43,4 @@ const RegisterPageOptions: StackNavigationOptions = {
   title: 'Register',
 };
 
-export default PagesNavigator;
+export default LoginRegisterNavigator;
