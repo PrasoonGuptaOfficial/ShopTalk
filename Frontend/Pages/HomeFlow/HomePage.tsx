@@ -4,15 +4,32 @@ import {
   SafeAreaView,
   Dimensions,
   ImageBackground,
-  Text,
+  StatusBar,
+  View,
 } from 'react-native';
+
+const MyStatusBar = ({backgroundColor}: {backgroundColor: string}) => (
+  <View style={[styles.statusBarHeight, {backgroundColor}]}>
+    <SafeAreaView>
+      <StatusBar
+        animated={true}
+        backgroundColor={backgroundColor}
+        barStyle="light-content"
+        hidden={false}
+        networkActivityIndicatorVisible={false}
+        translucent={true}
+      />
+    </SafeAreaView>
+  </View>
+);
 
 function HomePage(): React.JSX.Element {
   return (
-    <SafeAreaView style={styles.homePage}>
+    <View style={styles.homePage}>
+      <MyStatusBar backgroundColor="rgb(5, 158, 242)" />
       <ImageBackground
         alt="Shop Talk Shopping Banner"
-        blurRadius={10}
+        blurRadius={8}
         borderBottomLeftRadius={10}
         borderBottomRightRadius={10}
         crossOrigin="use-credentials"
@@ -21,19 +38,14 @@ function HomePage(): React.JSX.Element {
         resizeMethod="auto"
         source={require('../../Assets/Images/ShopTalkShoppingBanner.png')}
         style={styles.shoppingBanner}
-        testID="Shop_Talk_Shopping_Banner">
-        <Text>Text 1</Text>
-        <Text>Text 2</Text>
-        <Text>Text 3</Text>
-      </ImageBackground>
-    </SafeAreaView>
+        testID="Shop_Talk_Shopping_Banner" />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   homePage: {
     flex: 1,
-    backgroundColor: 'white',
   },
   shoppingBanner: {
     width: Dimensions.get('window').width,
@@ -41,6 +53,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  statusBarHeight: {
+    height: StatusBar.currentHeight,
   },
 });
 
