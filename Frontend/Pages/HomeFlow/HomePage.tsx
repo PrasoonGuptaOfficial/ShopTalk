@@ -29,7 +29,7 @@ function HomePage(): React.JSX.Element {
       <MyStatusBar backgroundColor="rgb(5, 158, 242)" />
       <ImageBackground
         alt="Shop Talk Shopping Banner"
-        blurRadius={8}
+        blurRadius={6}
         borderBottomLeftRadius={10}
         borderBottomRightRadius={10}
         crossOrigin="use-credentials"
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   shoppingBanner: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height / 10,
+    height: Dimensions.get('window').height / 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
